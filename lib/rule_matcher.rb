@@ -1,9 +1,5 @@
 class RuleMatcher
 
-  def self.traverse(tree)
-
-  end
-
   def self.match(tree, pattern, in_var_ref=false)
     result = true
     tree.each_with_index do |obj, i|
@@ -14,7 +10,7 @@ class RuleMatcher
           # :var_ref in the pattern matches anything
           in_var_ref = true
           next
-        elsif pattern[i] == :@const && pattern[i+1] =~ /^VAR\d*$/
+        elsif pattern[i] == :@const && pattern[i+1] =~ /^VAL\d*$/
           break
         else
           result = false
