@@ -37,7 +37,6 @@ describe CodeTransformer do
         [:binary, [:vcall, [:@ident, "b", [1, 4]]], :+, [:vcall, [:@ident, "a", [1, 0]]]]]]
     end
 
-
     it "works" do
       result = CodeTransformer.transform_code(transformation, substitutions)
       expect(result).to eq(expected)
